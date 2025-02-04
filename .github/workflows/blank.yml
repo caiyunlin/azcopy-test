@@ -30,10 +30,12 @@ jobs:
         run: |
           echo List files
           ls -R
+          echo Extract files
           tar -xvf azcopy_linux_amd64_10.28.0.tar.gz
           ls -R
           rm /usr/bin/azcopy -rf
           sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
+          azcopy --version
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
